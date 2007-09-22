@@ -870,11 +870,11 @@ Games::FEAR::Log - Log analysis tool for F.E.A.R. dedicated servers
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -1003,9 +1003,10 @@ The default is to keep them forever, and this can be specified by passing an emp
 
 Indicate whether the source log should be truncated to zero bytes (and in
 effect emptied).  This is useful if you are reading from a live log file
-and don't want to waste resources reprocessing old log entries.  A non-zero
-value turns on log truncating, and a zero value turns it off.  The default
-is off.
+and don't want to waste resources reprocessing old log entries.  Note, of
+course, that if a logfile is already locked by the server process, any
+attempted writes to it will fail.  A non-zero value turns on log truncating,
+and a zero value turns it off.  The default is off.
 
 =back
 
